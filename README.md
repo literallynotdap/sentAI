@@ -51,7 +51,7 @@ pip install -r requirements.txt
 ```
 OPENAI_API_KEY=your_api_key_here
 ```
-Replace `your_api_key_here` with your actual OpenAI API key.
+### Replace `your_api_key_here` with your actual OpenAI API key.
 
 ## Usage
 
