@@ -25,22 +25,22 @@ cd sentAI
 
 ### - On Windows:
 ```
-python -m venv my_project_venv
+python -m venv venv
 ```
 ### - On macOS and Linux:
 ```
-python3 -m venv my_project_venv
+python3 -m venv venv
 ```
 ## 4. Activate the virtual environment:
 
 ### - On Windows:
 ```
-my_project_venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 ### - On macOS and Linux:
 ```
-source my_project_venv/bin/activate
+source venv/bin/activate
 ```
 
 ## 5. Install the required packages from `requirements.txt`:
