@@ -69,7 +69,7 @@ def setup_arguments_and_logging():
     # Update the parser description
     engine_descriptions = " - ".join(
         [f"{engine}{desc}" for engine, desc in ENGINE_DESCRIPTIONS.items()]
-    )  # Rename from engine_options
+    )
     parser_description = f"sentAI ChatGPT Terminal\n\n"
     usage = f"Usage:\n  python innit.py [-h] [-i] [-e ENGINE] [-t MAX_TOKENS] [-T TEMPERATURE] [-m MODE] [-v VERBOSITY] [-TT TOP_P] [-n NUM_SUGGESTIONS]\n\nExample commands:\n  python innit.py -h  # Display help message\n  python innit.py -i -e davinci  # Start in interactive"
     # Initialize the parser with the updated description
