@@ -67,7 +67,8 @@ python sentai.py -i
 ```
 To exit the program at any time, type 'EXIT@@' and press Enter.
 ```
+# Planned Features:
 
-
+![alt text](resources/sentai3.png)
 
 
