@@ -56,6 +56,8 @@ OPENAI_API_KEY=your_api_key_here
 
 ## Usage
 
+![alt text](resources/sentai2.png)
+
 ## To run the project, execute the following command:
 ```
 python sentai.py -i
