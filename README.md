@@ -33,22 +33,13 @@ python3 -m venv my_project_venv
 ### - On Windows:
 ```
 my_project_venv\Scripts\activate
-python innit.py -i
-```
-
-This will start the program in interactive mode. You will be prompted to choose between chat mode (1) and programming assist mode (2). Type the corresponding number to select a mode and follow the on-screen instructions.
-
-To exit the program at any time, type 'EXIT@@' and press Enter.
-
-For additional options and help, run:
-```
-python innit.py -h
 ```
 
 ### - On macOS and Linux:
 ```
 source my_project_venv/bin/activate
 ```
+
 ##5. Install the required packages from `requirements.txt`:
 ```
 pip install -r requirements.txt
@@ -63,7 +54,7 @@ Replace `your_api_key_here` with your actual OpenAI API key.
 
 To run the project, execute the following command:
 ```
-python innit.py -i
+python sentai.py -i
 ```
 This will start the program in interactive mode. You will be prompted to choose between chat mode (1) and programming assist mode (2). Type the corresponding number to select a mode and follow the on-screen instructions.
 
