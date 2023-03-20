@@ -270,7 +270,6 @@ def chat_mode():
     """
     Chat mode: Allows the user to have a conversation with the ChatGPT model.
     """
-    # function body
     console.print(
         Text(
             "\n═════════════════════════════════════════════════════",
