@@ -60,8 +60,6 @@ This will start the program in interactive mode. You will be prompted to choose 
 
 To exit the program at any time, type 'EXIT@@' and press Enter.
 
-For additional options and help, run:
-
 
 
 
