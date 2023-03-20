@@ -64,6 +64,8 @@ python sentai.py -i
 ```
 - This will start the program in interactive mode. You will be prompted to choose between chat mode (1) and programming assist mode (2). Type the corresponding number to select a mode and follow the on-screen instructions.
 
+- Note: Programming assist mode is not implemented currently, but will be soon enough.
+
 ```
 To exit the program at any time, type 'EXIT@@' and press Enter.
 ```
