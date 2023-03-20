@@ -8,9 +8,20 @@ import openai
 import time
 import random
 from argparse import HelpFormatter
+import json
 
-# Initialize console with a fixed width of 80
-console = Console(width=80)
+# Load resources from JSON files
+with open("engine_descriptions.json", "r") as f:
+    ENGINE_DESCRIPTIONS = json.load(f)
+
+with open("haikus.json", "r") as f:
+    haikus = json.load(f)
+
+with open("hacking_quotes.json", "r") as f:
+    hacking_quotes = json.load(f)
+
+# Initialize console with a fixed width of 60
+console = Console(width=60)
 
 # Load environment variables from .env file and set OpenAI API key
 load_dotenv()
@@ -19,47 +30,11 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # Initialize the history list to store user input and GPT responses
 history = []
 
-# Define engine descriptions for the available GPT engines
-ENGINE_DESCRIPTIONS = {
-    "davinci": "",
-    "davinci-instruct-beta": "",
-    "text-davinci-002": "",
-    "text-davinci-003": "",
-    "curie": "",
-    "curie-instruct-beta": "",
-    "text-curie-002": "",
-    "babbage": "",
-    "text-babbage-002": "",
-    "ada": "",
-    "text-ada-001": "",
-    "text-ada-002": "",
-}
-
-# Define a list of haikus and hacking quotes to display randomly
-haikus = [
-    "Life is a river\n Flowing on towards the sea\n One with everything",
-    "In stillness we find\n The essence of existence\n Peace in every breath",
-    "A journey of life\n Winding path through ups and downs\n Embrace every turn",
-    "The beauty of life\n Is in its imperfection\n A work of art, flawed",
-    "Philosophy is\n A quest for the truth of life\n Wisdom's endless path",
-]
-
-hacking_quotes = [
-    "The best way to predict the future is to invent it.",
-    "I'm not a great programmer; I'm just a good programmer with great habits.",
-    "Any sufficiently advanced technology is indistinguishable from magic.",
-    "Hacking is not a crime, it's a survival skill.",
-    "The only way to do great work is to love what you do.",
-    "The best minds of my generation are thinking about how to make people click ads.",
-    "The Internet is the first thing that humanity has built that humanity doesn't understand, the largest experiment in anarchy that we have ever had.",
-    "Computers are like bikinis. They save people a lot of guesswork.",
-    "If you can't explain it simply, you don't understand it well enough.",
-    "The most damaging phrase in the language is: 'It's always been done that way.'",
-]
-
 # Custom help formatter for argparse
 class ColoredHelpFormatter(HelpFormatter):
     def __init__(self, *args, **kwargs):
+        self.option_color = "\033[93m"
+        self.usage_color = "\033[95m"
         super().__init__(*args, **kwargs)
 
     def _get_help_string(self, action):
@@ -175,16 +150,10 @@ def setup_arguments_and_logging():
 
 
 def display_ascii_art():
-    banner_color = "bold green"
     with open("resources/ascii.txt", "r", encoding="utf-8") as f:
         ascii_art = f.read()
-    console.print(
-        Text(
-            "═════════════════════════════════════════════════════\n",
-            style=f"{banner_color}",
-        )
-    )
-    console.print(Text(ascii_art, style="bold red"))
+    with console.status("[bold green]Loading...") as status:
+        console.print(Text(ascii_art, style="bold red"))
 
 
 def display_random_quote_or_haiku():
@@ -197,6 +166,13 @@ def display_random_quote_or_haiku():
         )
     )
     console.print(Text(display_text, style=f"italic {banner_color}"))
+
+
+def display_random_quote_or_haiku():
+    selected_list = random.choice([haikus, hacking_quotes])
+    display_text = random.choice(selected_list)
+    with console.status("[bold green]Loading...") as status:
+        console.print(Text(display_text, style=f"italic {banner_color}"))
 
 
 def valid_integer(
@@ -344,12 +320,10 @@ def programming_assist_mode():
     iterations = valid_integer("\nHow many lines of code do you want to generate? ")
 
     for i in range(iterations):
-        console.print("\n[bold cyan]Code Line {} Prompt:[/] ".format(i + 1), end="")
+        console.print(f"\n[bold cyan]Code Line {i + 1} Prompt:[/] ", end="")
         prompt = input()
         generated_text = chatgpt_response(prompt)
-        console.print(
-            "[bold yellow]Generated Code Line {}:[/] {}".format(i + 1, generated_text)
-        )
+        console.print(f"[bold yellow]Generated Code Line {i + 1}:[/] {generated_text}")
 
 
 if __name__ == "__main__":
