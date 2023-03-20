@@ -43,11 +43,11 @@ my_project_venv\Scripts\activate
 source my_project_venv/bin/activate
 ```
 
-##5. Install the required packages from `requirements.txt`:
+## 5. Install the required packages from `requirements.txt`:
 ```
 pip install -r requirements.txt
 ```
-##6. Create a `.env` file in the project directory and add your OpenAI API key:
+## 6. Create a `.env` file in the project directory and add your OpenAI API key (or use the one provided in this repo):
 ```
 OPENAI_API_KEY=your_api_key_here
 ```
