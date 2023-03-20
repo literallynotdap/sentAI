@@ -12,11 +12,11 @@ progress so dont complain if it breaks while I am still adding features.
 
 ## 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/sentAI-ChatGPT-Terminal.git
+git clone https://github.com/literallynotdap/sentAI.git
 ```
 ## 2. Enter the project directory:
 ```
-cd sentAI-ChatGPT-Terminal
+cd sentAI
 ```
 ## 3. Create a virtual environment to isolate the dependencies for your project:
 
