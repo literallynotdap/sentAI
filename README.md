@@ -1,5 +1,7 @@
 # sentAI ChatGPT Terminal
 
+![alt text](resources/sentai.png)
+
 This project allows users to interact with OpenAI's ChatGPT via the terminal. Users can choose between a chat mode and a programming assist mode. It is also a work in
 progress so dont complain if it breaks while I am still adding features.
 
